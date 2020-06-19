@@ -3,14 +3,20 @@
 Answer these on your own, then compare answers as a group
 
 1.  What are props?
+    - Properties that are set on components that pass data from parent to child
 
 2.  How do you pass props from a parent to a child?
+    - Set up an attribute on the child from within the parent, and then we can pass down data or a function
 
 3.  How do you access props from a class based child component?
+    - In a class we would use this.props.PROPNAME
 
 4.  How do you access props from a functional component?
+    - You would use props.PROPNAME
 
 5.  How do you bind a function to a parent component so that it can be passed to a child?
+    - Use the bind method and bind the function in the constructor
+    - Use an arrow function as an alternative
 
 ### Understand
 
@@ -37,7 +43,7 @@ class Queue extends Component {
     this.setState({ questions });
   }
   answerQuestion(index) {
-    const questions = [...this.state.questions];
+    const questions = [...this.state.questions;
     questions.splice(index, 1);
     this.setState({ questions });
   }
@@ -53,14 +59,15 @@ class Queue extends Component {
 }
 ```
 
-### Apply
+<!-- ### Apply
 
 Try these on your own, but work together if you start to get stuck.
 
-7.  Using the `Queue` component above, create a `Student` component that can add a question as a string and a `Mentor` component that can remove a question from the array.
+7.  Using the `Queue` component above, create a `Student` component that can add a question as a string and a `Mentor` component that can remove a question from the array. -->
 
 ### Analyze, Evaluate, Create
 
 Discuss these questions as a group
 
 8.  In the Queue component above, why are we holding state in the Queue component instead of Mentor or Student?
+    - Because both children need access to the same state information though the functions being passed as props
